@@ -130,10 +130,6 @@ Puppet::Type.newtype(:nexus3_repository) do
 
   newproperty(:pgp_keypair) do
     desc 'PGP signing key pair.'
-
-    def insync?(is)
-      is.gsub(/\n/, "\\n") == should.gsub(/\n/, "\\n")
-    end
   end
 
   newproperty(:pgp_keypair_passphrase) do
